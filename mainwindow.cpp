@@ -112,13 +112,18 @@ void MainWindow::on_actionInstall_Mod_triggered()
 {
     QStringList file_path_list = QFileDialog::getOpenFileNames(this, tr("Install Mod"), "", "*.jar");
 
-    foreach(QString file_path, file_path_list)
+    foreach(auto file_path, file_path_list)
         _model->append(file_path);
 }
 
 void MainWindow::on_actionDelete_Mod_triggered()
 {
-    QModelIndex index = _proxy_model->mapToSource(ui->tableViewMods->currentIndex());
+    QModelIndex current_index = ui->tableViewMods->currentIndex();
+
+    if (!current_index.isValid())
+        return;
+
+    QModelIndex index = _proxy_model->mapToSource(current_index);
 
     _model->remove(index);
 }
