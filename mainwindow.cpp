@@ -182,3 +182,8 @@ void MainWindow::on_actionMod_Directory_triggered()
         ui->tableViewMods->resizeColumnToContents(0);
     }
 }
+
+void MainWindow::on_actionAbout_Qt_triggered()
+{
+    QApplication::aboutQt();
+}

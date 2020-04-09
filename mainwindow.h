@@ -44,6 +44,8 @@ private slots:
 
     void on_actionMod_Directory_triggered();
 
+    void on_actionAbout_Qt_triggered();
+
 private:
     Ui::MainWindow *ui;
 
@@ -55,7 +57,7 @@ private:
     QSettings *_settings;
 
     const QString product_version = "0.1";
-    const QString product_site = "";
+    const QString product_site = "https://github.com/Aleksei-Miller/mod_manager";
 };
 
 #endif
